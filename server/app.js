@@ -13,7 +13,11 @@ const server = app.listen(process.env.PORT, () => {
 })
 
 
-
+app.get('/', (req, res, next) => {
+    res.status(200).json({
+        message: 'bad request'
+    })
+})
 const userRouter = require('./userRouter');
 app.use('/user', userRouter);
 

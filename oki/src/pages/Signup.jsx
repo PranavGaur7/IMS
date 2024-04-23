@@ -15,19 +15,8 @@ export default function Signup() {
 
       if (handleValidation()) {
         const { password, username, code } = data;
-        const user = await axios.post("https://ims-mocha.vercel.app/user/register", {
-          username, code, password
-        })
-        if (user.data.code === 11000 && user.data.keyValue.hasOwnProperty('username')) {
-          toast.error("username should be unique")
-        }
-        else if (user.data.code === 11000 && user.data.keyValue.hasOwnProperty('email')) {
-          toast.error("email should be unique")
-        }
-        else {
           toast.success("Signed in")
           navigate('/dashboard');
-        }
       }
     }
     catch (err) {

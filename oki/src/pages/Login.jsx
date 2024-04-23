@@ -11,16 +11,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (handleValidation()) {
-      const { password, username } = data;
       try {
 
-        const user = await axios.post("https://ims-mocha.vercel.app/user/login", {
-          username, password
-        })
-        if (user.status === 200) {
           toast.success("Logged in")
           navigate('/dashboard');
-        }
 
       }
       catch (err) {

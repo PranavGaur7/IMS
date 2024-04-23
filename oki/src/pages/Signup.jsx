@@ -15,7 +15,7 @@ export default function Signup() {
 
       if (handleValidation()) {
         const { password, username, code } = data;
-        const user = await axios.post("http://localhost:5000/user/register", {
+        const user = await axios.post("https://ims-mocha.vercel.app/user/register", {
           username, code, password
         })
         if (user.data.code === 11000 && user.data.keyValue.hasOwnProperty('username')) {

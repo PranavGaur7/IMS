@@ -14,7 +14,7 @@ const Login = () => {
       const { password, username } = data;
       try {
 
-        const user = await axios.post("http://localhost:5000/user/login", {
+        const user = await axios.post("https://ims-mocha.vercel.app/user/login", {
           username, password
         })
         if (user.status === 200) {
